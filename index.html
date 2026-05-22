@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+
+  <title>Downloads - Prefeitura de Arabutã</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'Montserrat',sans-serif;
+      background:
+      radial-gradient(circle at top,#202020 0%,#0d0d0d 55%,#000 100%);
+      color:white;
+      min-height:100vh;
+      overflow-x:hidden;
+    }
+
+    .top-line{
+      height:8px;
+      background:linear-gradient(
+      90deg,
+      #c30000,
+      #ff0000,
+      #222,
+      #222,
+      #b39700,
+      #ffd500
+      );
+    }
+
+    header{
+      width:100%;
+      padding:50px 20px 40px;
+      position:relative;
+      overflow:hidden;
+      border-bottom:1px solid rgba(255,255,255,.08);
+      background:
+      linear-gradient(
+      180deg,
+      rgba(255,255,255,.03),
+      rgba(255,255,255,0)
+      );
+    }
+
+    .header-content{
+      max-width:1400px;
+      margin:auto;
+      display:flex;
+      align-items:center;
+      gap:30px;
+      position:relative;
+      z-index:2;
+    }
+
+    .logo{
+      width:120px;
+      height:120px;
+      background:#1a1a1a;
+      border-radius:24px;
+      border:2px solid rgba(255,255,255,.08);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
+      box-shadow:
+      0 0 25px rgba(0,0,0,.5);
+    }
+
+    .logo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .title-area h1{
+      font-size:52px;
+      font-weight:800;
+      letter-spacing:1px;
+      margin-bottom:10px;
+    }
+
+    .title-area p{
+      font-size:20px;
+      color:#d1d1d1;
+      line-height:1.6;
+    }
+
+    .tag{
+      margin-top:15px;
+      display:inline-block;
+      background:linear-gradient(90deg,#c30000,#ffd500);
+      padding:10px 18px;
+      border-radius:14px;
+      font-size:14px;
+      font-weight:700;
+      color:white;
+      letter-spacing:1px;
+    }
+
+    .container{
+      max-width:1450px;
+      margin:auto;
+      padding:50px 25px;
+    }
+
+    .section-title{
+      font-size:34px;
+      font-weight:800;
+      margin-bottom:40px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+      gap:35px;
+    }
+
+    .card{
+      max-width:400px;
+      background:
+      linear-gradient(
+      180deg,
+      rgba(255,255,255,.03),
+      rgba(255,255,255,.01)
+      );
+
+      border-radius:28px;
+      padding:30px;
+      border:1px solid rgba(255,255,255,.08);
+
+      backdrop-filter:blur(10px);
+
+      transition:.3s;
+
+      box-shadow:
+      0 10px 30px rgba(0,0,0,.35);
+    }
+
+    .card:hover{
+      transform:translateY(-8px);
+      box-shadow:
+      0 15px 40px rgba(0,0,0,.6);
+    }
+
+    .card-header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:25px;
+    }
+
+    .app-icon{
+      width:70px;
+      height:70px;
+      border-radius:18px;
+      
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:30px;
+      font-weight:800;
+      color:white;
+  
+    }
+
+    .version{
+      background:rgba(255,255,255,.08);
+      padding:8px 14px;
+      border-radius:12px;
+      font-size:13px;
+      font-weight:700;
+      color:#d8d8d8;
+    }
+
+    .app-title{
+      font-size:28px;
+      font-weight:800;
+      margin-bottom:18px;
+    }
+
+    .app-description{
+      color:#c9c9c9;
+      line-height:1.8;
+      margin-bottom:28px;
+      min-height:100px;
+    }
+
+    .meta{
+      display:flex;
+      justify-content:space-between;
+      margin-bottom:25px;
+      color:#9f9f9f;
+      font-size:14px;
+    }
+
+    .download-btn{
+      width:100%;
+      border:none;
+      border-radius:18px;
+      padding:18px;
+      font-size:18px;
+      font-weight:800;
+      cursor:pointer;
+      text-decoration:none;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:12px;
+
+      background:
+      linear-gradient(
+      90deg,
+      #c30000,
+      #ff0000,
+      #ffd500
+      );
+
+      color:white;
+
+      transition:.3s;
+    }
+
+    .download-btn:hover{
+      transform:scale(1.02);
+      filter:brightness(1.08);
+    }
+
+    footer{
+      margin-top:50px;
+      padding:40px 20px;
+      text-align:center;
+      color:#777;
+      border-top:1px solid rgba(255,255,255,.08);
+    }
+
+    @media(max-width:900px){
+
+      .header-content{
+        flex-direction:column;
+        text-align:center;
+      }
+
+      .title-area h1{
+        font-size:38px;
+      }
+
+      .title-area p{
+        font-size:17px;
+      }
+
+      .section-title{
+        font-size:28px;
+      }
+
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="top-line"></div>
+
+<header>
+
+  <div class="header-content">
+
+    <div class="logo">
+
+      <!-- SUBSTITUA PELO CAMINHO DA BANDEIRA -->
+      <img src="./images/logo.png" alt="Prefeitura de Arabutã">
+
+    </div>
+
+    <div class="title-area">
+
+      <h1>
+        Prefeitura de Arabutã
+      </h1>
+
+      <p>
+        Central oficial de downloads de sistemas e aplicativos municipais.
+      </p>
+
+      <div class="tag">
+        Desenvolvimento • Tecnologia da Informação
+      </div>
+
+    </div>
+
+  </div>
+
+</header>
+
+<div class="container">
+
+  <div class="section-title">
+    Sistemas Disponíveis
+  </div>
+
+  <div class="grid">
+
+    <!-- CARD -->
+
+    <div class="card">
+
+      <div class="card-header">
+
+        <div class="app-icon">
+          <img src="./images/placar.png" alt="" width="80" >
+        </div>
+
+        <div class="version">
+          v1.0.0
+        </div>
+
+      </div>
+
+      <div class="app-title">
+        Placar Municipal
+      </div>
+
+      <div class="app-description">
+        Sistema oficial de placar esportivo utilizado em campeonatos e eventos municipais.
+      </div>
+
+      <div class="meta">
+        <span>Windows 10/11</span>
+        <span>64 Bits</span>
+      </div>
+
+      <a class="download-btn"
+         href="downloads/PlacarMunicipalSetup.exe">
+
+        ⬇ Baixar Instalador
+
+      </a>
+
+    </div>
+  </div>
+
+</div>
+
+<footer>
+
+  © 2026 Prefeitura Municipal de Arabutã • Departamento de Tecnologia da Informação
+
+</footer>
+
+</body>
+</html>
